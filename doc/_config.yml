@@ -1,0 +1,38 @@
+# 站点的名字
+site_name: rainboy的题解库
+
+# 作者,也就是你的网名
+author: rainboy
+
+# 头像,选一个图床上传你的头像
+avatar: https:/github.com/rainboylvx.png
+
+
+# 你的github主页
+github: https://github.com/rainboylvx
+
+# 你的email
+email: rainboylvx@qq.com
+
+# 你的qq号
+qq: 597872644
+
+
+out_dir: output/
+
+
+# 分页的大小
+pagenation: 30
+
+web_prefix: /oi-hexo
+
+cover:
+
+# 友链
+friends: 
+    - 
+        name:
+        url: 
+    - 
+        name:
+        url: 

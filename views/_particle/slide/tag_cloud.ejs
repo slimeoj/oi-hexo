@@ -1,0 +1,15 @@
+<!--标签云-->
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title"> 标签云 </h5>
+    </div>
+    <div class="card-body">
+        <% tag_cloud.forEach(function(tag){ %>
+<span class="badge badge-light">
+    <a href="<%=config.web_prefix%><%=tag.url%>">  
+            <%=tag.name%>
+        </a>
+</span>
+        <% }) %>
+    </div>
+</div>

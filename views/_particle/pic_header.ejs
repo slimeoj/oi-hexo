@@ -1,0 +1,30 @@
+<%
+var default_cover = `${config.web_prefix}static/img/cover.gif`
+var cover = post.cover || default_cover
+var title = post.title 
+if( post.attributes )
+    title = title || post.attributes.title
+if(!title)
+    title = config.title || '无标题'
+%>
+    <div class="header header-background" style="background-image:url(<%-cover%>)">
+        <div class="container">
+            <div class="row" style="height:100%">
+                <div class="col-12  page-title">
+                    <%=title%>
+                </div>
+                <div class="col-12  site-menu">
+                    <ul class="nav">
+                        <li class="nav-item"><a class="nav-link" href="<%-config.web_prefix%>">
+                                <span class="iconfont icon-home"></span>
+                                主页
+                            </a></li>
+                            <li class="nav-item"><a class="nav-link" href="<%-config.web_prefix%>about.html">
+                                <span class="iconfont icon-about"></span>
+                                关于
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>

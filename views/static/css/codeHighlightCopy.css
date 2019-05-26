@@ -1,0 +1,19 @@
+/* copy的样式 */
+pre[class*="language-"] .copy {
+  content: "copy";
+  padding: 2px 10px 0;
+  position: absolute;
+  right: 0;
+  transform: translate(-10px, -60%);
+  border-radius: 5px;
+  color: white;
+  background: #b5a0a0;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+pre[class*="language-"]:hover .copy {
+  transform: translate(-10px, -70%);
+}
+pre[class*="language-"]:hover .copy:hover {
+  color: gray;
+}

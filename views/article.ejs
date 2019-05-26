@@ -1,0 +1,42 @@
+<%
+var tags = []
+var srcs = []
+var level = 1
+if(post && post.attributes){
+    tags = post.attributes.tags || []
+    srcs = post.attributes.source || []
+    level = post.attributes.level || 1
+}
+%>
+<html lang="en">
+    <%-include('_particle/head') %>
+    <link rel="stylesheet" href="<%-config.web_prefix%>static/css/github-markdown.css">
+    <link rel="stylesheet" href="<%-config.web_prefix%>static/css/codeHighlight.css">
+    <link rel="stylesheet" href="<%-config.web_prefix%>static/css/codeHighlightCopy.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css" />
+<body>
+    <%-include('_particle/pic_header') %>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 bk">
+                <%-include('_particle/article_info',{srcs,tags,level})%>
+                <div class="markdown-body" style="min-height:500px;">
+                    <%-post.body%>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+    <%-include('_particle/footer') %>
+    <%-include('_particle/script') %>
+    <script src="//twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-c.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js"></script>
+    <script src="<%-config.web_prefix%>static/js/viz.js"></script>
+    <script src="<%-config.web_prefix%>static/js/full.render.js"></script>
+    <script src="<%-config.web_prefix%>static/js/vizRender.js"></script>
+</body>
+</html>

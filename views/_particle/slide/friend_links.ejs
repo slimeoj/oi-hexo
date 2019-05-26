@@ -1,0 +1,11 @@
+<%
+var friends = config.friends || []
+%>
+                <div class="card">
+                    <div class="card-header">友链</div>
+                    <div class="card-body">
+                        <% friends.forEach( function(friend){ %>
+                            <a class="card-link" href="<%=friend.url%>"><%=friend.name%></a>
+                        <% }) %>
+                    </div>
+                </div>

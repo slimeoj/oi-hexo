@@ -1,0 +1,29 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th class="table-title">标题</th>
+            <th class="table-tags text-right">标签</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% tables.forEach(function(data){ %>
+            <tr>
+                <td>
+                    <a href="<%config.web_prefix%><%=data.url%>"><%-data.attributes.title || data.name.replace('.md','')%></a>
+                </td> 
+                <td class="text-right">
+                    <% 
+                    if(data.attributes.tags){
+                    var tags = data.attributes.tags
+                    tags.forEach(function(tag){ %>
+                    <span class="badge badge-light">
+                        <a href="<%-config.web_prefix%><%-tag.url%>">  
+                            <%=tag.name%>
+                        </a>
+                    </span>
+                    <% }) } %>
+                </td> 
+            </tr>
+        <% })%>
+    </tbody>
+</table>
