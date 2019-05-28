@@ -14,6 +14,9 @@ const tag_1 = require("./libs/generate/tag");
 const artilce_list_1 = require("./libs/generate/artilce_list");
 const artilce_1 = __importDefault(require("./libs/generate/artilce"));
 const about_1 = __importDefault(require("./libs/generate/about"));
+/** _debug +++++++ */
+const debug_1 = require("./debug/debug");
+/** _debug end +++++++ */
 var C = new compose_1.default();
 function _debug(ctx) {
     console.log("========= end =========");
@@ -26,6 +29,8 @@ C.add_mw(list_1.article_list);
 C.add_mw(store_1.default);
 /** 取出 */
 C.add_mw(artilce_list_1.get_article_list);
+/** debug */
+C.add_mw(debug_1.print_sorted_articles);
 /** 得到tag_cloud */
 C.add_mw(tag_1.get_tag_cloud);
 C.add_mw(empty_dir_1.default);

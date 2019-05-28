@@ -14,7 +14,14 @@ import g_artilce from './libs/generate/artilce'
 
 import about from './libs/generate/about'
 
+
+/** _debug +++++++ */
+
+import {print_sorted_articles} from './debug/debug'
+/** _debug end +++++++ */
+
 var C = new compose()
+
 
 
 function _debug(ctx:CTX){
@@ -31,6 +38,9 @@ C.add_mw(store)
 
 /** 取出 */
 C.add_mw(get_article_list)
+
+/** debug */
+C.add_mw(print_sorted_articles)
 
 /** 得到tag_cloud */
 C.add_mw(get_tag_cloud)

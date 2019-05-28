@@ -11,7 +11,7 @@ async function get_article_list(ctx, next) {
     function _list() {
         return new Promise(function (res, rej) {
             // @ts-ignore
-            db.find({}).sort({ update_time: -1 }).exec(function (err, docs) {
+            db.find({}).sort({ "attributes.update_time": -1 }).exec(function (err, docs) {
                 if (err)
                     rej(err);
                 else

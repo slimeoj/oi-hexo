@@ -8,7 +8,7 @@ export async function get_article_list(ctx:CTX,next:Function){
     function _list():Promise<[]>{
         return new Promise( function(res,rej){
             // @ts-ignore
-            db.find({}).sort({update_time:-1}).exec(function(err,docs){
+            db.find({}).sort({"attributes.update_time":-1}).exec(function(err,docs){
                 if( err)
                     rej(err)
                 else

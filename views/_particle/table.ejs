@@ -9,7 +9,7 @@
         <% tables.forEach(function(data){ %>
             <tr>
                 <td>
-                    <a href="<%config.web_prefix%><%=data.url%>"><%-data.attributes.title || data.name.replace('.md','')%></a>
+                    <a href="<%-config.web_prefix%><%=data.url%>"><%-data.attributes.title || data.name.replace('.md','')%></a>
                 </td> 
                 <td class="text-right">
                     <% 
